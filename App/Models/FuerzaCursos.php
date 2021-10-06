@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Controllers\PostTypeController;
+use App\Controllers\SubscriptionController;
 use App\Migrations\SubscriptionsTable;
 use App\Models\PostType\Label;
 use App\Models\PostType\MetaBox;
@@ -87,5 +88,6 @@ class FuerzaCursos {
 
 	private static function routes(): void {
 		Route::singular( FUERZA_POST_TYPE, [ PostTypeController::class, 'singular' ] );
+		Route::post( '/subscribe', [ SubscriptionController::class, 'create' ] );
 	}
 }
