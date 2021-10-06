@@ -44,6 +44,14 @@ class FuerzaCursos {
 			new Label( 'Cursos Fuerza', 'Cursos', 'Curso' ),
 			'dashicons-book-alt'
 		);
+		$postType->setSupports(
+			[
+				'title',
+				'editor',
+				'thumbnail',
+				'excerpt'
+			]
+		);
 
 		$postTypeBuilder = new PostTypeBuilder( $postType );
 		$postTypeBuilder->init();
