@@ -15,6 +15,7 @@ class FuerzaCursos {
 		self::defineConstants( $file );
 		self::registerHooks( $file );
 		self::registerPostType();
+		self::routes();
 	}
 
 	private static function defineConstants( $file ): void {
@@ -43,7 +44,7 @@ class FuerzaCursos {
 
 	private static function registerPostType(): void {
 		$postType = new PostTypeSettings(
-			'fuerza-cursos',
+			FUERZA_POST_TYPE,
 			new Label( 'Cursos Fuerza', 'Cursos', 'Curso' ),
 			'dashicons-book-alt'
 		);
@@ -76,5 +77,9 @@ class FuerzaCursos {
 
 	public static function showFields( $post ): void {
 		include FUERZA_PLUGIN_DIR . "/Views/Admin/fields.php";
+	}
+
+	private static function routes(): void {
+		Route::singular( FUERZA_POST_TYPE, [ PostTypeController::class, 'singular' ] );
 	}
 }
