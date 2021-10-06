@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Asset;
 use App\Models\PostType\Post;
 use App\Providers\HelperProvider;
 
@@ -30,6 +31,9 @@ class PostTypeController {
 	}
 
 	public static function singular(): void {
+		$asset = new Asset();
+		$asset->registerStyles();
+
 		add_action( 'loop_start', [ __CLASS__, 'showContentHeader' ] );
 		add_action( 'loop_end', [ __CLASS__, 'showContentFooter' ] );
 	}
