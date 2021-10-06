@@ -16,7 +16,14 @@ class PostTypeController {
 
 		$fields = $_POST['fuerza'] ?? [];
 
+		if ( isset( $fields['fc_deadline'] ) ) {
+			$fields['fc_deadline'] = HelperProvider::sanitizeDate( $fields['fc_deadline'] );
+		}
+
 		foreach ( $fields as $key => $value ) {
+			$key   = sanitize_key( $key );
+			$value = sanitize_text_field( $value );
+
 			update_post_meta( $postID, $key, $value );
 		}
 	}
