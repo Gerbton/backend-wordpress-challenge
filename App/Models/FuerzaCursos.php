@@ -22,6 +22,7 @@ class FuerzaCursos {
 	private static function defineConstants( $file ): void {
 		define( 'FUERZA_PLUGIN_DIR', plugin_dir_path( $file ) );
 		define( 'FUERZA_PLUGIN_URL', plugin_dir_url( $file ) );
+		define( 'FUERZA_PLUGIN_VERSION', '0.0.0' );
 		define( 'FUERZA_POST_TYPE', 'fuerza-cursos' );
 	}
 
