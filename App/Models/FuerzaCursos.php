@@ -68,5 +68,7 @@ class FuerzaCursos {
 				'high'
 			)
 		);
+
+		$postTypeBuilder->onSave( [ PostTypeController::class, 'save' ] );
 	}
 }
