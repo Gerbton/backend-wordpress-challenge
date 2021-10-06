@@ -14,6 +14,11 @@ class FuerzaCursos {
 		self::registerPostType();
 	}
 
+	private static function defineConstants( $file ): void {
+		define( 'FUERZA_PLUGIN_DIR', plugin_dir_path( $file ) );
+		define( 'FUERZA_PLUGIN_URL', plugin_dir_url( $file ) );
+	}
+
 	private static function registerHooks( $file ): void {
 		register_activation_hook( $file, [ __CLASS__, 'activate' ] );
 		register_deactivation_hook( $file, [ __CLASS__, 'deactivate' ] );
