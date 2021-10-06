@@ -33,6 +33,7 @@ class PostTypeController {
 	public static function singular(): void {
 		$asset = new Asset();
 		$asset->registerStyles();
+		$asset->registerScripts();
 
 		add_action( 'loop_start', [ __CLASS__, 'showContentHeader' ] );
 		add_action( 'loop_end', [ __CLASS__, 'showContentFooter' ] );
