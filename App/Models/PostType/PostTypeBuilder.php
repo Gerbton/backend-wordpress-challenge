@@ -73,4 +73,10 @@ class PostTypeBuilder {
 
 		the_post_thumbnail( [ 100, 100 ] );
 	}
+
+	public function addMetaBox( MetaBox $metaBox ): void {
+		add_action( "add_meta_boxes_{$this->postTypeSettings->getName()}", function () use ( $metaBox ) {
+			$metaBox->register();
+		} );
+	}
 }
