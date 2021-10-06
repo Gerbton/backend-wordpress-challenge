@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 class FuerzaCursos {
 	public static function run( $file ): void {
+		self::defineConstants( $file );
 		self::registerHooks( $file );
 		self::registerPostType();
 	}
