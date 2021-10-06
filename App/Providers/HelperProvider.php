@@ -31,4 +31,8 @@ class HelperProvider {
 
 		return wp_verify_nonce( $_POST[ $name ], $action );
 	}
+
+	public static function sanitizeDate( string $date ): string {
+		return ( new \DateTime( str_replace( '/', '-', $date ) ) )->format( 'Y-m-d' );
+	}
 }
