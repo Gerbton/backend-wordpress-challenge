@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Controllers\PostTypeController;
+use App\Migrations\SubscriptionsTable;
 use App\Models\PostType\Label;
 use App\Models\PostType\MetaBox;
 use App\Models\PostType\PostTypeBuilder;
@@ -32,6 +33,9 @@ class FuerzaCursos {
 
 	public static function activate(): void {
 		flush_rewrite_rules();
+
+		$subscriptionsTable = new SubscriptionsTable();
+		$subscriptionsTable->create();
 	}
 
 	public static function deactivate(): void {
