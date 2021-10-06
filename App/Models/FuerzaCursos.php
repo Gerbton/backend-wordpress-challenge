@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\PostType\Label;
+use App\Models\PostType\MetaBox;
 use App\Models\PostType\PostTypeBuilder;
 use App\Models\PostType\PostTypeSettings;
 
@@ -56,5 +57,16 @@ class FuerzaCursos {
 		$postTypeBuilder = new PostTypeBuilder( $postType );
 		$postTypeBuilder->init();
 		$postTypeBuilder->addThumbColumnInAdminList();
+
+		$postTypeBuilder->addMetaBox(
+			new MetaBox(
+				$postType->getName(),
+				'fuerza_details',
+				'Detalhes',
+				[ __CLASS__, 'showFields' ],
+				'normal',
+				'high'
+			)
+		);
 	}
 }
