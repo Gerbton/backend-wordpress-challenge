@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\PostType\Post;
 use App\Providers\HelperProvider;
 
 defined( 'ABSPATH' ) || exit;
@@ -26,5 +27,19 @@ class PostTypeController {
 
 			update_post_meta( $postID, $key, $value );
 		}
+	}
+
+	public static function singular(): void {
+		add_action( 'loop_start', [ __CLASS__, 'showContentHeader' ] );
+		add_action( 'loop_end', [ __CLASS__, 'showContentFooter' ] );
+	}
+
+	public static function showContentHeader(): void {
+		$post = new Post( get_post() );
+		include FUERZA_PLUGIN_DIR . "/Views/Public/Single/content-header.php";
+	}
+
+	public static function showContentFooter(): void {
+		include FUERZA_PLUGIN_DIR . "/Views/Public/Single/content-footer.php";
 	}
 }
