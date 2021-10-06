@@ -43,7 +43,8 @@ class FuerzaCursos {
 	}
 
 	public static function uninstall(): void {
-
+		$subscriptionsTable = new SubscriptionsTable();
+		$subscriptionsTable->drop();
 	}
 
 	private static function registerPostType(): void {
