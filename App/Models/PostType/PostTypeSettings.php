@@ -29,7 +29,7 @@ class PostTypeSettings {
 		$this->icon           = $icon;
 		$this->description    = '';
 		$this->supports       = [ 'title', 'editor', 'thumbnail' ];
-		$this->rewrite        = [ 'slug' => true ];
+		$this->rewrite        = [];
 		$this->taxonomies     = [];
 		$this->public         = true;
 		$this->showUI         = true;
