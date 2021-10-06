@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Controllers\PostTypeController;
 use App\Models\PostType\Label;
 use App\Models\PostType\MetaBox;
 use App\Models\PostType\PostTypeBuilder;
