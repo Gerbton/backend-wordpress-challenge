@@ -4,7 +4,7 @@
  **/
 ?>
 <div class="fc-container">
-    <div class="fc-d-flex fc-d-flex--justify-center">
+    <div class="fc-align-center">
         <p>Carga horária: <span><?= $post->getWorkload() ?></span></p>
         <p>
 			<?php if ( $post->isOpenToSubscribe() ) { ?>
