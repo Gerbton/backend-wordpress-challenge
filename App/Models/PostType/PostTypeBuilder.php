@@ -79,4 +79,8 @@ class PostTypeBuilder {
 			$metaBox->register();
 		} );
 	}
+
+	public function onSave( callable $callback ): void {
+		add_action( "save_post_{$this->postTypeSettings->getName()}", $callback );
+	}
 }
