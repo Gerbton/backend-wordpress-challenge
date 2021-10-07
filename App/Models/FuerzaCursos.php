@@ -9,6 +9,7 @@ use App\Models\PostType\Label;
 use App\Models\PostType\MetaBox;
 use App\Models\PostType\PostTypeBuilder;
 use App\Models\PostType\PostTypeSettings;
+use App\Providers\Bootstrap\BootstrapProvider;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -63,6 +64,9 @@ class FuerzaCursos {
 				'excerpt'
 			]
 		);
+
+		$bootstrap = new BootstrapProvider( $postType->getName(), true, true );
+		$bootstrap->registerAssets();
 
 		$postTypeBuilder = new PostTypeBuilder( $postType );
 		$postTypeBuilder->init();
