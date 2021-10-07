@@ -21,13 +21,28 @@ class Asset {
 			[],
 			FUERZA_PLUGIN_VERSION
 		);
+
+		wp_enqueue_style(
+			'BlockUI',
+			FUERZA_PLUGIN_URL . "/assets/css/BlockUI.css",
+			[],
+			FUERZA_PLUGIN_VERSION
+		);
 	}
 
 	public function enqueueScripts(): void {
 		wp_enqueue_script(
+			'BlockUI',
+			FUERZA_PLUGIN_URL . "/assets/js/BlockUI.js",
+			[],
+			FUERZA_PLUGIN_VERSION,
+			true
+		);
+
+		wp_enqueue_script(
 			'FCSubscription',
 			FUERZA_PLUGIN_URL . "/assets/js/Subscription.js",
-			[ 'jquery' ],
+			[ 'jquery', 'BlockUI' ],
 			FUERZA_PLUGIN_VERSION,
 			true
 		);
