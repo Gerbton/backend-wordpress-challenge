@@ -99,21 +99,14 @@ class Subscription {
 		);
 	}
 
-	public static function exists( string $column, $compare, $value = null ) {
+	public static function emailExists( string $email ): bool {
 		global $wpdb;
 
 		$table = $wpdb->prefix . self::$table;
 
-		if ( ! isset( $value ) ) {
-			$value   = $compare;
-			$compare = '=';
-		}
-
 		$query = $wpdb->prepare(
-			"SELECT * FROM $table WHERE %s %s %s",
-			$column,
-			$compare,
-			$value
+			"SELECT * FROM $table WHERE email = %s",
+			$email
 		);
 
 		return ! empty( $wpdb->get_row( $query ) );
