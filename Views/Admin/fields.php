@@ -1,4 +1,5 @@
 <?php use App\Providers\HelperProvider; ?>
+
 <div class="form-row">
 
 	<?php HelperProvider::registerNonce( $post->post_type ); ?>

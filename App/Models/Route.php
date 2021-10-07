@@ -4,7 +4,6 @@ namespace App\Models;
 
 defined( 'ABSPATH' ) || exit;
 
-
 class Route {
 
 	public static function singular( string $postType, callable $callback ): void {

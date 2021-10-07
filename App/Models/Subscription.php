@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+defined('ABSPATH') || exit;
+
 class Subscription {
 	private static string $table = 'fuerza_subscriptions';
 	private ?int $id;

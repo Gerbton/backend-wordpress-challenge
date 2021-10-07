@@ -2,6 +2,8 @@
 
 namespace App\Models\PostType;
 
+defined( 'ABSPATH' ) || exit;
+
 class Post {
 	private int $ID;
 	private string $title;
