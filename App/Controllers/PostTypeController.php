@@ -47,4 +47,8 @@ class PostTypeController {
 	public static function showContentFooter(): void {
 		include FUERZA_PLUGIN_DIR . "/Views/Public/Single/content-footer.php";
 	}
+
+	public static function showAdminSubscriptions( \WP_Post $post ): void {
+		include FUERZA_PLUGIN_DIR . "/Views/Admin/subscriptions.php";
+	}
 }
