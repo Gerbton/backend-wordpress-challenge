@@ -61,4 +61,8 @@ class Post {
 
 		return $deadline >= $today;
 	}
+
+	public function hasLink(): bool {
+		return ! empty( $this->link );
+	}
 }
