@@ -48,6 +48,10 @@ class PostTypeController {
 		include FUERZA_PLUGIN_DIR . "/Views/Public/Single/content-footer.php";
 	}
 
+	public static function showFields( \WP_Post $post ): void {
+		include FUERZA_PLUGIN_DIR . "/Views/Admin/fields.php";
+	}
+
 	public static function showAdminSubscriptions( \WP_Post $post ): void {
 		include FUERZA_PLUGIN_DIR . "/Views/Admin/subscriptions.php";
 	}

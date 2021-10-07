@@ -73,7 +73,7 @@ class FuerzaCursos {
 				$postType->getName(),
 				'fuerza_details',
 				'Detalhes',
-				[ __CLASS__, 'showFields' ],
+				[ PostTypeController::class, 'showFields' ],
 				'normal',
 				'high'
 			)
@@ -91,10 +91,6 @@ class FuerzaCursos {
 		);
 
 		$postTypeBuilder->onSave( [ PostTypeController::class, 'save' ] );
-	}
-
-	public static function showFields( $post ): void {
-		include FUERZA_PLUGIN_DIR . "/Views/Admin/fields.php";
 	}
 
 	private static function routes(): void {
