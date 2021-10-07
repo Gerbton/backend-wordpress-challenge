@@ -17,7 +17,7 @@ class Subscription {
 		$this->name      = $name;
 		$this->email     = $email;
 		$this->postId    = $postId;
-		$this->createdAt = $createdAt ? new \DateTime( $createdAt ) : null;
+		$this->createdAt = new \DateTime( $createdAt ?? '0000-00-00' );
 	}
 
 	public function getId(): ?int {
@@ -104,7 +104,7 @@ class Subscription {
 	public static function emailExists( string $email ): bool {
 		global $wpdb;
 
-		$table = $wpdb->prefix . self::$table;
+		$table = self::getTableName( $wpdb );
 
 		$query = $wpdb->prepare(
 			"SELECT * FROM $table WHERE email = %s",
@@ -114,7 +114,30 @@ class Subscription {
 		return ! empty( $wpdb->get_row( $query ) );
 	}
 
-	public static function findAll() {
+	public static function findByPostID( int $postId ): array {
+		global $wpdb;
 
+		$table = self::getTableName( $wpdb );
+
+		$query = $wpdb->prepare( "SELECT * FROM $table WHERE post_id = %d", $postId );
+
+		$results       = $wpdb->get_results( $query );
+		$subscriptions = [];
+
+		foreach ( $results as $result ) {
+			$subscriptions[] = new Subscription(
+				$result->id,
+				$result->name,
+				$result->email,
+				$result->post_id,
+				$result->created_at
+			);
+		}
+
+		return $subscriptions;
+	}
+
+	private static function getTableName( \wpdb $wpdb ): string {
+		return $wpdb->prefix . self::$table;
 	}
 }
