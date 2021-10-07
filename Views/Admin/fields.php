@@ -1,4 +1,10 @@
-<?php use App\Providers\HelperProvider; ?>
+<?php
+
+use App\Models\PostType\Post;
+use App\Providers\HelperProvider;
+
+$_post = new Post( $post );
+?>
 
 <div class="form-row">
 
@@ -7,18 +13,19 @@
     <div class="form-group col-sm-12">
         <label for="fc_link">Link de inscrição</label>
         <input id="fc_link" type="url" class="form-control" name="fuerza[fc_link]" placeholder="https://www.exemplo.com"
-               value="<?= get_post_meta( $post->ID, 'fc_link', true ) ?>">
+               value="<?= $_post->getLink() ?>">
     </div>
 
     <div class="form-group col-md-6 col-sm-12">
         <label for="fc_workload">Carga horária</label>
         <input id="fc_workload" type="text" class="form-control" name="fuerza[fc_workload]"
-               value="<?= get_post_meta( $post->ID, 'fc_workload', true ) ?>">
+               value="<?= $_post->getWorkload() ?>">
     </div>
 
     <div class="form-group col-md-6 col-sm-12">
         <label for="fc_deadline">Data limite</label>
-        <input id="fc_deadline" type="text" class="form-control" name="fuerza[fc_deadline]"
-               value="<?= get_post_meta( $post->ID, 'fc_deadline', true ) ?>">
+        <input id="fc_deadline" type="text" class="form-control" name="fuerza[fc_deadline]" data-provide="datepicker"
+               data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
+               value="<?= $_post->getDeadline() ?>">
     </div>
 </div>
