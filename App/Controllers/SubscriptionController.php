@@ -14,7 +14,7 @@ class SubscriptionController {
 
 		$subscription = new Subscription();
 
-		if ( $subscription::exists( 'email', $request->get_param( 'email' ) ) ) {
+		if ( $subscription::emailExists( $request->get_param('email') ) ) {
 			wp_send_json_error( 'E-mail já cadastrado' );
 		}
 
