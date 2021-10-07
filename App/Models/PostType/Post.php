@@ -50,7 +50,7 @@ class Post {
 	}
 
 	public function getDeadline(): mixed {
-		return $this->deadline ? ( new \DateTime( $this->deadline ) )->format( 'd/m/Y' ) : '';
+		return ( new \DateTime( $this->deadline ?? 'now' ) )->format( 'd/m/Y' );
 	}
 
 	public function getThumbnailID(): bool|int {
