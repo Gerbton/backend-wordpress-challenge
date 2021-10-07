@@ -40,9 +40,17 @@ class Asset {
 		);
 
 		wp_enqueue_script(
+			'jQueryValidation',
+			FUERZA_PLUGIN_URL . "/assets/js/jquery.validate.min.js",
+			[ 'jquery' ],
+			FUERZA_PLUGIN_VERSION,
+			true
+		);
+
+		wp_enqueue_script(
 			'FCSubscription',
 			FUERZA_PLUGIN_URL . "/assets/js/Subscription.js",
-			[ 'jquery', 'BlockUI' ],
+			[ 'jQueryValidation', 'BlockUI' ],
 			FUERZA_PLUGIN_VERSION,
 			true
 		);

@@ -7,14 +7,14 @@
     <div class="col-12">
         <div class="fc-group">
             <label for="fc_name">Nome</label>
-            <input type="text" name="name" id="fc_name" class="fc-input" placeholder="Jonh Due" required>
+            <input type="text" name="name" id="fc_name" class="fc-input" placeholder="Jonh Due">
         </div>
     </div>
 
     <div class="col-12">
         <div class="fc-group">
             <label for="fc_email">Email</label>
-            <input type="email" name="email" id="fc_email" class="fc-input" placeholder="jonh@email.com" required>
+            <input type="email" name="email" id="fc_email" class="fc-input" placeholder="jonh@email.com">
         </div>
     </div>
 

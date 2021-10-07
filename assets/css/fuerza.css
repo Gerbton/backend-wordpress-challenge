@@ -4,6 +4,40 @@
     margin: 0 auto;
 }
 
-.fc-d-flex {
-    display: flex;
+.fc-form {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.fc-title.fc-title--form {
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.fc-group {
+    margin-bottom: 10px;
+}
+
+.fc-group label {
+    display: block;
+    margin-bottom: 0;
+}
+
+.fc-group .fc-input,
+.fc-group .fc-button {
+    width: 100%;
+}
+
+.fc-margin-top-2 {
+    margin-top: 1.5rem;
+}
+
+.col- * {
+    padding: 10px;
+}
+
+.col-12 {
+    width: 100%;
 }
