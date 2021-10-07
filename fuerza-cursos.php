@@ -4,7 +4,7 @@
  * Plugin Name: Fuerza Cursos
  * Plugin URI: https://www.wordpress.org/fuerza-cursos
  * Description: Plugin para divulgação de cursos
- * Version: 0.0.0
+ * Version: 1.0.0
  * Requires at least: 5.8
  * Author: Gerbton Fonseca
  * Author URI: https://gerbton.com
