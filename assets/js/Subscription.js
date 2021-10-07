@@ -16,7 +16,14 @@ class Subscription {
                 dataType: 'json',
                 data: form.serialize(),
                 success: (response) => {
-                    console.log(response, 'deu boa');
+                    if (!response.success) {
+                        alert(response.data)
+                        return;
+                    }
+
+                    let linkToSubscribe = document.getElementById('jsLinkToSubscribe');
+
+                    window.open(linkToSubscribe.href, '_blank');
                 }
             });
         });
