@@ -79,6 +79,17 @@ class FuerzaCursos {
 			)
 		);
 
+		$postTypeBuilder->addMetaBox(
+			new MetaBox(
+				$postType->getName(),
+				'fuerza_subscriptions',
+				'Inscrições',
+				[ PostTypeController::class, 'showAdminSubscriptions' ],
+				'normal',
+				'high'
+			)
+		);
+
 		$postTypeBuilder->onSave( [ PostTypeController::class, 'save' ] );
 	}
 
